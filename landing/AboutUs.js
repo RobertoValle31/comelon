@@ -1,8 +1,9 @@
+/* eslint-disable @next/next/no-img-element */
 import { Grid, Typography } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 import Image from "next/image";
 
-const useStyles = makeStyles(() => ({
+const useStyles = makeStyles((theme) => ({
   container: {
     background: "#363d3a",
     height: 600,
@@ -19,6 +20,17 @@ const useStyles = makeStyles(() => ({
   description: {
     color: "white",
     fontSize: 20,
+  },
+  image: {
+    width: 400,
+    height: 400,
+    borderRadius: "50%",
+  },
+  [theme.breakpoints.down("md")]: {
+    image: {
+      width: "200px !important",
+      height: "200px !important",
+    },
   },
 }));
 
@@ -44,13 +56,11 @@ const AboutUs = () => {
           minim veniam, quis nostrud exercitation ullamco laboris nisi.
         </Typography>
       </Grid>
-      <Grid container justifyContent="center" alignItems="center" item md="6">
-        <Image
-          style={{ borderRadius: "50%" }}
+      <Grid container justifyContent="center" alignItems="center" item md={6}>
+        <img
           src="/images/logo/Comelon_about_logo.png"
           alt="comelon"
-          width="400"
-          height="400"
+          className={classes.image}
         />
       </Grid>
     </Grid>
