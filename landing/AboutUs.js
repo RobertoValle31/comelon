@@ -1,5 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
-import { Grid, Typography } from "@mui/material";
+import { Grid, Typography, Container } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 import Image from "next/image";
 
@@ -8,6 +8,7 @@ const useStyles = makeStyles((theme) => ({
     background: "#363d3a",
     height: 600,
     padding: "0px 20px",
+    display: "flex",
   },
   icon: {
     fontSize: "40px",
@@ -31,38 +32,44 @@ const useStyles = makeStyles((theme) => ({
       width: "200px !important",
       height: "200px !important",
     },
+    container: {
+      flexDirection: "column",
+      justifyContent: "center",
+    },
   },
 }));
 
 const AboutUs = () => {
   const classes = useStyles();
   return (
-    <Grid container className={classes.container}>
-      <Grid
-        container
-        justifyContent="center"
-        alignItems="center"
-        wrap="nowrap"
-        direction="column"
-        item
-        md={6}
-      >
-        <Grid container direction="column">
-          <h3 className={classes.header}>Quienes Somos?</h3>
+    <Grid container style={{ background: "#363d3a" }}>
+      <Container maxWidth="xl" className={classes.container}>
+        <Grid
+          container
+          justifyContent="center"
+          alignItems="center"
+          wrap="nowrap"
+          direction="column"
+          item
+          md={6}
+        >
+          <Grid container direction="column">
+            <h3 className={classes.header}>Quienes Somos?</h3>
+          </Grid>
+          <Typography className={classes.description}>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco laboris nisi.
+          </Typography>
         </Grid>
-        <Typography className={classes.description}>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi.
-        </Typography>
-      </Grid>
-      <Grid container justifyContent="center" alignItems="center" item md={6}>
-        <img
-          src="/images/logo/Comelon_about_logo.png"
-          alt="comelon"
-          className={classes.image}
-        />
-      </Grid>
+        <Grid container justifyContent="center" alignItems="center" item md={6}>
+          <img
+            src="/images/logo/Comelon_about_logo.png"
+            alt="comelon"
+            className={classes.image}
+          />
+        </Grid>
+      </Container>
     </Grid>
   );
 };

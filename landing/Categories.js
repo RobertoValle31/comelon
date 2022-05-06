@@ -13,6 +13,9 @@ const useStyles = makeStyles(() => ({
     fontSize: 40,
     margin: 20,
   },
+  category: {
+    marginBottom: 30,
+  },
   categoryContainer: {
     display: "flex",
     flexDirection: "column",
@@ -42,7 +45,7 @@ const Categories = () => {
           Que Te Gustaria Comer?
         </Typography>
 
-        <Grid container justifyContent="center">
+        <Grid className={classes.category} container justifyContent="center">
           {CATEGORIES.map((item) => (
             <Grid className={classes.categoryContainer} key={item.id}>
               <Grid

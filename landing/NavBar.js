@@ -9,6 +9,7 @@ const useStyles = makeStyles(() => ({
     height: 60,
     padding: "0px 20px",
     position: "fixed",
+    zIndex: 1,
   },
   icon: {
     fontSize: "40px",
