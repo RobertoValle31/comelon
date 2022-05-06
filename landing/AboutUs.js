@@ -45,7 +45,7 @@ const AboutUs = () => {
         wrap="nowrap"
         direction="column"
         item
-        md="6"
+        md={6}
       >
         <Grid container direction="column">
           <h3 className={classes.header}>Quienes Somos?</h3>
