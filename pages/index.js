@@ -1,8 +1,8 @@
 import { Grid } from "@mui/material";
-import NavBar from "../landing/NavBar";
-import AboutUs from "../landing/AboutUs";
-import Categories from "../landing/Categories";
-import ContactUs from "../landing/ContactUs";
+import NavBar from "../landing/home/NavBar";
+import AboutUs from "../landing/home/AboutUs";
+import Categories from "../landing/home/Categories";
+import ContactUs from "../landing/home/ContactUs";
 
 const Home = () => {
   return (

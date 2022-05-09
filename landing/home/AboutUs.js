@@ -1,9 +1,11 @@
 /* eslint-disable @next/next/no-img-element */
 import { Grid, Typography, Container } from "@mui/material";
 import { makeStyles } from "@mui/styles";
-import Image from "next/image";
 
 const useStyles = makeStyles((theme) => ({
+  root: {
+    background: "#363d3a",
+  },
   container: {
     background: "#363d3a",
     height: 600,
@@ -42,7 +44,7 @@ const useStyles = makeStyles((theme) => ({
 const AboutUs = () => {
   const classes = useStyles();
   return (
-    <Grid container style={{ background: "#363d3a" }}>
+    <Grid container className={classes.root}>
       <Container maxWidth="xl" className={classes.container}>
         <Grid
           container

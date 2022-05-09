@@ -1,6 +1,8 @@
-import { Grid, Typography, Container, Box } from "@mui/material";
+import { Grid, Typography, Container } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 import Image from "next/image";
+import Link from "next/link";
+
 import { CATEGORIES } from "./constants";
 
 const useStyles = makeStyles(() => ({
@@ -47,23 +49,25 @@ const Categories = () => {
 
         <Grid className={classes.category} container justifyContent="center">
           {CATEGORIES.map((item) => (
-            <Grid className={classes.categoryContainer} key={item.id}>
-              <Grid
-                container
-                className={classes.circle}
-                style={{ background: item.color }}
-                justifyContent="center"
-                alignItems="center"
-              >
-                <Image
-                  src={item.imageUrl}
-                  width={100}
-                  height={100}
-                  alt="icon"
-                />
+            <Link key={item.id} href={`/restaurants/${item.category}`}>
+              <Grid className={classes.categoryContainer}>
+                <Grid
+                  container
+                  className={classes.circle}
+                  style={{ background: item.color }}
+                  justifyContent="center"
+                  alignItems="center"
+                >
+                  <Image
+                    src={item.imageUrl}
+                    width={100}
+                    height={100}
+                    alt="icon"
+                  />
+                </Grid>
+                <Typography>{item.category}</Typography>
               </Grid>
-              <Typography>{item.category}</Typography>
-            </Grid>
+            </Link>
           ))}
         </Grid>
       </Grid>
