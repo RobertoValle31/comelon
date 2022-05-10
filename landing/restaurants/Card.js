@@ -1,6 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import { Grid, Typography } from "@mui/material";
 import { makeStyles } from "@mui/styles";
+import Link from "next/link";
 
 const useStyles = makeStyles((theme) => ({
   //Todo: Check animation
@@ -77,25 +78,27 @@ const Card = ({ restaurant }) => {
   const classes = useStyles();
 
   return (
-    <Grid container className={classes.card}>
-      <Grid container item md={5} className={classes.imageContainer}>
-        <img src={restaurant.profilePicture} alt="Restaurant" />
-      </Grid>
-      <Grid item md={7} className={classes.contentContainer}>
-        <Grid className={classes.headerContainer}>
-          <Typography className={classes.cardTitle}>
-            {restaurant.name}
-          </Typography>
-          <Typography className={classes.cardSubTitle}>
-            {restaurant.town}
-          </Typography>
-          <div className={classes.divider} />
+    <Link href={`/restaurant/${restaurant.id}`}>
+      <Grid container className={classes.card}>
+        <Grid container item md={5} className={classes.imageContainer}>
+          <img src={restaurant.profilePicture} alt="Restaurant" />
         </Grid>
-        <Grid container className={classes.descriptionContainer}>
-          {restaurant.description}
+        <Grid item md={7} className={classes.contentContainer}>
+          <Grid className={classes.headerContainer}>
+            <Typography className={classes.cardTitle}>
+              {restaurant.name}
+            </Typography>
+            <Typography className={classes.cardSubTitle}>
+              {restaurant.town}
+            </Typography>
+            <div className={classes.divider} />
+          </Grid>
+          <Grid container className={classes.descriptionContainer}>
+            {restaurant.description}
+          </Grid>
         </Grid>
       </Grid>
-    </Grid>
+    </Link>
   );
 };
 
