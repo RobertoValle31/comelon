@@ -37,6 +37,10 @@ const RestaurantProfile = () => {
     (restaurant) => restaurant.id === Number(router.query.restaurantId)
   );
 
+  if (!restaurant) {
+    return;
+  }
+
   return (
     <Grid container>
       <Grid container className={classes.header}>
